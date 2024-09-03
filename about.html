@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Steel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+        /* about   */
+        .container-about {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .pes-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .image-container {
+            flex: 1;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 70%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .project-count {
+            position: absolute;
+            bottom: 20px;
+            right: 50px;
+            background-color: #0077be;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            animation: floatOverlay 6s ease-in-out infinite;
+
+        }
+
+        .project-count .number {
+            font-size: 24px;
+            display: block;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .company-label {
+            color: #0077be;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        h1 span {
+            color: #FDC039;
+        }
+
+        .description {
+            margin-bottom: 20px;
+        }
+
+        .features {
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .feature::before {
+            content: '»';
+            color: #0077be;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .emphasis {
+            font-style: italic;
+            color: #666;
+        }
+
+        .dotted-bg {
+            position: absolute;
+            top: -20px;
+            right: 90px;
+            width: 100px;
+            height: 100px;
+            background-image: radial-gradient(#ff6600 2px, transparent 2px);
+            background-size: 10px 10px;
+            z-index: -1;
+            animation: floatOverlay 6s ease-in-out infinite;
+
+        }
+
+        @media (max-width: 768px) {
+            .pes-section {
+                flex-direction: column;
+            }
+
+            .image-container, .content {
+                width: 100%;
+            }
+
+            .project-count {
+                right: 20px;
+            }
+        }
+        
+
+
+        /* vision */
+        .container-vision {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 30px;
+        }
+        .vision-section {
+            padding: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        .vision-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        .vision-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        .company-name {
+            font-size: 0.9rem;
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        .vision-title {
+            font-size: 2.5rem;
+            margin: 0 0 20px;
+            color: #333;
+        }
+        .vision-title span {
+            color: #FDC039;
+        }
+        .vision-description {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .vision-image img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .image-overlay {
+            position: absolute;
+            bottom: -20px;
+            right: 70px;
+            width: 80%;
+            height: 100%;
+            border: 2px solid #FDC039;
+            border-radius: 10px;
+            z-index: -1;
+            animation: floatOverlay 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        @keyframes floatOverlay {
+            0% {
+                transform: translate(0px, 0px);
+            }
+            50% {
+                transform: translate(-5px, -15px);
+            }
+            100% {
+                transform: translate(0px, 0px);
+            }
+        }
+        @media (max-width: 768px) {
+            .container-vision {
+                width: 100%;
+            }
+            .vision-section {
+                flex-direction: column;
+            }
+            .vision-image {
+                order: -1;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <label class="logo">Squad Steel</label>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">☰</label>
+        <ul>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#About Us" class="active">About Us</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#Project">Gallery</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-header"  style="    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://www.ny-engineers.com/hubfs/Us%20construction%20%281%29.jpg); background-size: cover;">
+            <h1 style="color: white;">About Us</h1>
+        </div>
+
+
+
+        <div class="container-about">
+            <section class="pes-section">
+                <div class="image-container">
+                    <img src="https://prestylengineering.com/assets/front/img/about-brand.jpg" alt="Engineering team working on blueprints">
+                    <div class="project-count">
+                        <span class="number">1000+</span>
+                        Completed Project's
+                    </div>
+                    <div class="dotted-bg"></div>
+                </div>
+                <div class="content">
+                    <p class="company-label">PRESTYL Engineering Services</p>
+                    <h1><span>P</span>restyl Engineering Services (PES)</h1>
+                    <p class="description">
+                        Your global hub for cutting-edge Engineering, Structural Detailing, 
+                        Connection Design, and BIM solutions. With over 15+ years of industry 
+                        leadership and a track record of 1000+ Completed projects worldwide.
+                    </p>
+                    <div class="features">
+                        <p class="feature">We prioritize understanding our clients' unique needs.</p>
+                        <p class="feature">Our commitment doesn't end with project completion.</p>
+                    </div>
+                    <p class="emphasis">
+                        We embody innovation and excellence. Our commitment to quality, 
+                        timely deliveries, and surpassing client expectations solidifies our 
+                        status as an esteemed partner in the engineering domain.
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div class="container-vision">
+            <section class="vision-section">
+                <div class="vision-content">
+                    <p class="company-name">PRESTYL Engineering Services</p>
+                    <h1 class="vision-title"><span>O</span>ur Vision</h1>
+                    <p class="vision-description">
+                        Prestyl Engineering Services envisions pioneering engineering solutions 
+                        that transcend conventional norms. We aspire to lead the industry by 
+                        offering technically superior, environmentally conscious, economically 
+                        feasible, and innovative solutions. Our vision encompasses not just 
+                        engineering marvels but also a commitment to sustainable practices, 
+                        aiming to reshape the landscape of possibilities in the engineering realm.
+                    </p>
+                </div>
+                <div class="vision-image">
+                    <img src="https://prestylengineering.com/assets/front/img/our-vision.jpg" alt="Team collaboration">
+                    <div class="image-overlay"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container-footer">
+            <div class="footer-column">
+                <div class="logo-footer">
+                    <img src="image.png" alt="Nelectrix Design" width="250">
+                </div>
+                <p class="footer-description">loremipsum</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+                
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Web</a></li>
+                    <li><a href="#">App</a></li>
+                    <li><a href="#">Software</a></li>
+                    <li><a href="#">Ecommerce</a></li>
+                </ul>
+                
+            </div>
+            <div class="footer-column">
+                <h3>Get in touch</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: black;"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter fa-xl"style="color: black;"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin fa-xl"style="color: black;"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            ©2022 Glossy, All right reserved.
+        </div>
+    </footer>
+</body>
+</html>
