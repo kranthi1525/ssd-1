@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squad Steel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+section {
+    height: max-content;
+    width:100%;
+    display:grid;
+    place-items:center;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+  
+
+}
+.column{
+    max-width: 1500px;
+  
+    padding:30px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.card{
+    width:25rem;
+    height: 100%;
+    padding:2em 1.5em;
+    background: linear-gradient(white 50%,#FDC039 50%);
+    background-size: 100% 200%;
+    background-position: 0 2.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12);
+    cursor:pointer;
+    transition:0.5s;
+    margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+}
+h3{
+    font-size: 20px;
+    font-weight:600;
+    color:#FDC039;
+    margin: lem 0;
+}
+p{
+    color:#000000;
+    font-size: 15px;
+    line-height:1.6;
+    letter-spacing:0.03em;
+
+}
+.icon-wrapper{
+    background-color: #FDC039;
+    position:relative;
+    margin:auto;
+    font-size:30px;
+    height:2.5em;
+    width:2.5em;
+    color:#000000;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+}
+.card:hover{
+    background-position: 0 100%;
+}
+.card:hover .icon-wrapper{
+    background-color: #000000;
+    color:#FDC039;
+}
+.card:hover h3{
+    color:#000000;
+}
+.card:hover p{
+    color:#000000;
+}
+
+@media (max-width: 768px){
+    .card{
+        width: 20rem;
+    }
+}
+    </style>
+    </head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="nav-logo.png" alt="">
+        </div>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">☰</label>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" >About Us</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="page-header"  style="    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://www.ny-engineers.com/hubfs/Us%20construction%20%281%29.jpg); background-size: cover;">
+            <h1 style="color: white;">About Us</h1>
+        </div>
+
+        <section>
+           
+            <div class="column">
+                        <a href="" class="card">
+                            <div class="icon-wrapper">
+                            <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h3>Structural Steel Detailing</h3>
+                            <p>
+                                Structural Steel Detailing is the production of detailed drawings for 
+                                steel fabricators and steel erectors to use in the construction of buildings.
+                            </p>
+                        </a>
+                        <a href="" class="card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-hammer"></i>  
+                            </div>
+                            <h3>Structural Steel Detailing</h3>
+                            <p>
+                                Structural Steel Detailing is the production of detailed drawings for 
+                                steel fabricators and steel erectors to use in the construction of buildings.
+                            </p>
+                        </a>
+                        <a href="" class="card">
+                            <div class="icon-wrapper">
+                            <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h3>Structural Steel Detailing</h3>
+                            <p>
+                                Structural Steel Detailing is the production of detailed drawings for 
+                                steel fabricators and steel erectors to use in the construction of buildings.
+                            </p>
+                        </a>
+                        <a href="" class="card">
+                            <div class="icon-wrapper">
+                            <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h3>Structural Steel Detailing</h3>
+                            <p>
+                                Structural Steel Detailing is the production of detailed drawings for 
+                                steel fabricators and steel erectors to use in the construction of buildings.
+                            </p>
+                        </a>
+            </div>
+          </section>
+
+        </main>
+
+    <footer>
+        <div class="container-footer">
+            <div class="footer-column">
+                <div class="logo-footer">
+                    <img src="nav-logo.png" alt="Squad steel detailing"  >
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+                
+            </div>
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Web</a></li>
+                    <li><a href="#">App</a></li>
+                    <li><a href="#">Software</a></li>
+                    <li><a href="#">Ecommerce</a></li>
+                </ul>
+                
+            </div>
+            <div class="footer-column">
+                <h3>Get in touch</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: black;"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter fa-xl"style="color: black;"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin fa-xl"style="color: black;"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            ©2022 Glossy, All right reserved.
+        </div>
+    </footer>
+    <script src="wow.js"></script>
+</body>
+</html>

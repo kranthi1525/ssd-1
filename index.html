@@ -6,71 +6,567 @@
     <title>Squad Steel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    </head>
+
+        <!-- Bootstrap CSS -->
+           </head>
+    <style>
+/* slider  */
+.hero-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-background {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            z-index: 1; /* Ensure content is above the overlay */
+        }
+
+        .slide-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .slide-content p {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2; /* Ensure nav is above the overlay */
+        }
+
+        .slider-nav button {
+            background: transparent;
+            border: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .slider-nav button.active {
+            opacity: 1;
+        }
+
+
+
+        .img-container-grid{
+  display:flex;
+  flex-wrap: wrap;
+  width: 70%;
+  position: relative;
+  left: 15%;
+}
+
+.smallsquare{
+  max-width:20%;
+  height:auto;
+  flex:0 0 20%;
+  padding-top:20%;
+  display:grid;
+  position:relative;
+}
+
+.h_rectangle{
+  max-width: 40%;
+  flex: 0 0 40%;
+  padding-top:20%;
+  position:relative;
+}
+
+.bigsquare{
+  max-width:40%;
+  height:auto;
+  flex:0 0 40%;
+  padding-top:40%;
+  display:grid;
+  position:relative;
+}
+.bigsquare_blank{
+  max-width:40%;
+  height:auto;
+  flex:0 0 40%;
+  display:flex;
+  flex-wrap: wrap;
+}
+.inner_square{
+  max-width:50%;
+  flex: 0 0 50%;
+  height:50%;
+  position:relative;
+}
+.v_rectangle{
+  max-width: 20%;
+  flex: 0 0 20%;
+  padding-top:40%;
+  position:relative;
+}
+
+.img-grid-c{
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  position:absolute;
+  object-fit:cover;
+  object-position:center;
+  padding:2.5px;
+}
+.img-container-grid > div {
+        overflow: hidden;
+    }
+
+    .img-grid-c {
+        transform: scale(0.1);
+        opacity: 0;
+        transition: transform 3s ease, opacity 3s ease;
+    }
+    .img-grid-c img :hover{
+        transform: scale(1.2);
+
+    }
+    .img-grid-c.zoom-in {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+/* General fade-in animation */
+.container-about, .gallery-container, .services {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially shifted up */
+    transition: opacity 2.5s ease, transform 2.5s ease; /* Slower transition (2.5s) */
+}
+
+.container-about.fade-in, .gallery-container.fade-in, .services {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Back to normal position */
+}
+
+
+
+
+.services {
+    height: max-content;
+    width:100%;
+    display:grid;
+    place-items:center;
+}
+.services .row{
+    display: flex;
+    flex-wrap: wrap;
+  
+
+}
+.services .column{
+    max-width: 1500px;
+  
+    padding:30px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.card{
+    width:25rem;
+    height: 100%;
+    padding:2em 1.5em;
+    background: linear-gradient(white 50%,#FDC039 50%);
+    background-size: 100% 200%;
+    background-position: 0 2.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.12);
+    cursor:pointer;
+    transition:0.5s;
+    margin-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+}
+.card {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 2.5s ease, transform 2.5s ease;
+    }
+
+    .card.fade-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+h3{
+    font-size: 20px;
+    font-weight:600;
+    color:#FDC039;
+    margin: lem 0;
+}
+p{
+    color:#000000;
+    font-size: 15px;
+    line-height:1.6;
+    letter-spacing:0.03em;
+
+}
+.icon-wrapper{
+    background-color: #FDC039;
+    position:relative;
+    margin:auto;
+    font-size:30px;
+    height:2.5em;
+    width:2.5em;
+    color:#000000;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+}
+.card:hover{
+    background-position: 0 100%;
+}
+.card:hover .icon-wrapper{
+    background-color: #000000;
+    color:#FDC039;
+}
+.card:hover h3{
+    color:#000000;
+}
+.card:hover p{
+    color:#000000;
+}
+
+@media (max-width: 768px){
+    .card{
+        width: 20rem;
+    }
+}
+    </style>
 <body>
     <nav>
-        <label class="logo">Squad Steel</label>
+        <div class="logo">
+            <img src="nav-logo.png" alt="">
+        </div>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">☰</label>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About Us</a></li>
-            <li><a href="#Services">Services</a></li>
-            <li><a href="#Project">Gallery</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html" >About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <main>
-        <div class="page-header"  style="    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(https://www.ny-engineers.com/hubfs/Us%20construction%20%281%29.jpg); background-size: cover;">
-            <h1 style="color: white;">About Us</h1>
-        </div>
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-background">
+                    <img src="banner3.jpg" alt="Steel Structure 1">
+                </div>
+                <div class="slide-content">
+                    <h1>Squad Steel Detailing</h1>
+                    <p>Excellence in Steel Detailing</p>
+                    <a href="contact.html" style="background-color: #ff6600;color: white;padding: 7px 20px;border-radius: 10px;">Contact us</a>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-background">
+                    <img src="https://static.vecteezy.com/system/resources/previews/022/453/397/non_2x/silhouette-of-engineer-looking-at-construction-site-engineering-concept-double-exposure-generative-ai-free-photo.jpg" alt="Steel Structure 2">
+                </div>
+                <div class="slide-content">
+                    <h1>Squad Steel Detailing</h1>
+                    <p>Precision Engineering Solutions</p>
+                    <a href="contact.html" style="background-color: #ff6600;color: white;padding: 7px 20px;border-radius: 10px;">Contact us</a>
 
-          just do work here
+                </div>
+            </div>
+            <div class="slide">
+                <div class="slide-background">
+                    <img src="banner2.jpg" alt="Steel Structure 3">
+                </div>
+                <div class="slide-content">
+                    <h1>Squad Steel Detailing</h1>
+                    <p>Building the Future, One Detail at a Time</p>
+                    <a href="contact.html" style="background-color: #ff6600;color: white;padding: 7px 20px;border-radius: 10px;">Contact us</a>
+
+                </div>
+            </div>
+            <div class="slider-nav"></div>
+        </div>
+    
+        <script>
+            const slides = document.querySelectorAll('.slide');
+            const sliderNav = document.querySelector('.slider-nav');
+            let currentSlide = 0;
+    
+            // Create navigation buttons
+            slides.forEach((_, index) => {
+                const button = document.createElement('button');
+                button.addEventListener('click', () => goToSlide(index));
+                sliderNav.appendChild(button);
+            });
+    
+            const navButtons = sliderNav.querySelectorAll('button');
+    
+            function goToSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                navButtons[currentSlide].classList.remove('active');
+                currentSlide = (n + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+                navButtons[currentSlide].classList.add('active');
+            }
+    
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+    
+            // Initialize first slide
+            navButtons[0].classList.add('active');
+    
+            // Auto-advance slides every 5 seconds
+            setInterval(nextSlide, 5000);
+        </script>
+
+
+
+
+        <div class="container-about wow fadeInUp">
+            <h1 style="text-align: center;color: #ff6600;">About Us</h1>
+            <section class="pes-section">
+                <div class="image-container">
+                    <img src="https://prestylengineering.com/assets/front/img/about-brand.jpg" alt="Engineering team working on blueprints">
+                    <div class="project-count">
+                        <span class="number">1000+</span>
+                        Completed Project's
+                    </div>
+                    <div class="dotted-bg"></div>
+                </div>
+                <div class="content">
+                    <p class="company-label">Squad steel detailing pvt</p>
+                    <h1><span>S</span>quad steel detailing (PVT)</h1>
+                    <p class="description">
+                        Your global hub for cutting-edge Engineering, Structural Detailing, 
+                        Connection Design, and BIM solutions. With over 15+ years of industry 
+                        leadership and a track record of 1000+ Completed projects worldwide.
+                    </p>
+                    <div class="features">
+                        <p class="feature">We prioritize understanding our clients' unique needs.</p>
+                        <p class="feature">Our commitment doesn't end with project completion.</p>
+                    </div>
+                    <p class="emphasis">
+                        We embody innovation and excellence. Our commitment to quality, 
+                        timely deliveries, and surpassing client expectations solidifies our 
+                        status as an esteemed partner in the engineering domain.
+                    </p>
+                </div>
+            </section>
+        </div>
+        <section class="services fadeInUp">
+            <h1 style="text-align: center;color: #ff6600;">Services</h1>
+           
+            <div class="column" style="gap: 30px;">
+                        <a href="" class="card">
+                            <div class="icon-wrapper">
+                            <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h3>Structural Steel Detailing</h3>
+                            <p>
+                                Structural Steel Detailing is the production of detailed drawings for 
+                                steel fabricators and steel erectors to use in the construction of buildings.
+                            </p>
+                        </a>
+                        <a href="" class="card">
+                            <div class="icon-wrapper">
+                                <i class="fa-solid fa-hammer"></i>  
+                            </div>
+                            <h3>Structural Steel Detailing</h3>
+                            <p>
+                                Structural Steel Detailing is the production of detailed drawings for 
+                                steel fabricators and steel erectors to use in the construction of buildings.
+                            </p>
+                        </a>
+                        <a href="" class="card">
+                            <div class="icon-wrapper">
+                            <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <h3>Structural Steel Detailing</h3>
+                            <p>
+                                Structural Steel Detailing is the production of detailed drawings for 
+                                steel fabricators and steel erectors to use in the construction of buildings.
+                            </p>
+                        </a>
+                        
+            </div>
+            <a href="services.html" style="padding:10px 30px;background-color: #FDC039;color: white;border-radius: 20px;">Show more</a>
+
+          </section>
+
+        <section style="padding: 40px;" class="gallery-container">
+            <h1 style="text-align: center;color: #ff6600;">Gallery</h1>
+            <div class="container">
+                <div class="img-container-grid">
+                    <div class="smallsquare"><img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg" class="img-grid-c"></div>
+              <div class="smallsquare"><img src="https://media.istockphoto.com/photos/view-of-sydney-harbour-australia-picture-id535455441?k=6&m=535455441&s=612x612&w=0&h=jVkW0bOqvffn2SzvUdncgkwHGScJRzak0oaQGij__h8=" class="img-grid-c"></div>
+                <div class="h_rectangle"><img src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-grid-c"></div>
+                <div class="smallsquare"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WnzXzbr2hiB8lPq3n_p5fnQdvOMc3Ouummyk11uVylX-7rtdXA" class="img-grid-c"></div>
+                <div class="bigsquare"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR-oo8-jn28YVesncpNZ4cBHocvHtKLwzmpVDbq1k7KNa5jEiL" class="img-grid-c"></div>
+                <div class="bigsquare_blank">
+                  <div class="inner_square"><img src="https://www.w3schools.com/w3css/img_lights.jpg" class="img-grid-c"></div>
+                  <div class="inner_square"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR-oo8-jn28YVesncpNZ4cBHocvHtKLwzmpVDbq1k7KNa5jEiL" class="img-grid-c"></div>
+                  <div class="inner_square"><img src="https://media.cntraveller.in/wp-content/uploads/2018/10/GettyImages-990972132-866x487.jpg" class="img-grid-c"></div>
+                  <div class="inner_square"><img src="https://www.w3schools.com/howto/img_snow.jpg" class="img-grid-c"></div>
+                </div>
+                <div class="v_rectangle"><img src="https://images.unsplash.com/photo-1541233349642-6e425fe6190e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="img-grid-c"></div>
+             
+                </div>
+            </div>
+        </section>
+        
+          </section>
 
         </main>
 
-    <footer>
-        <div class="container-footer">
-            <div class="footer-column">
-                <div class="logo-footer">
-                    <img src="image.png" alt="Nelectrix Design" width="250">
+        <footer>
+            <div class="container-footer">
+                <div class="footer-column">
+                    <div class="logo-footer">
+                        <img src="nav-logo.png" alt="Squad steel detailing"  >
+                    </div>
                 </div>
-                <p class="footer-description">loremipsum</p>
-            </div>
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
-                </ul>
-                
-            </div>
-            <div class="footer-column">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Web</a></li>
-                    <li><a href="#">App</a></li>
-                    <li><a href="#">Software</a></li>
-                    <li><a href="#">Ecommerce</a></li>
-                </ul>
-                
-            </div>
-            <div class="footer-column">
-                <h3>Get in touch</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: black;"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter fa-xl"style="color: black;"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin fa-xl"style="color: black;"></i></a>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Gallery</a></li>
+                    </ul>
+                    
                 </div>
-                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web</a></li>
+                        <li><a href="#">App</a></li>
+                        <li><a href="#">Software</a></li>
+                        <li><a href="#">Ecommerce</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3>Get in touch</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: black;"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter fa-xl"style="color: black;"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin fa-xl"style="color: black;"></i></a>
+                    </div>
+                    
+                </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            ©2022 Glossy, All right reserved.
-        </div>
-    </footer>
+            <div class="footer-bottom">
+                ©2022 Glossy, All right reserved.
+            </div>
+        </footer>
+
+
+
+        <script src="wow.js"></script>
+        <script src="wow.min.js"></script>
+        <script src="main.js"></script>
+        <script>
+            new WOW().init();
+    
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.container-about, .gallery-container, .services');
+                elements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        element.classList.add('fade-in');
+                    }
+                });
+    
+                // Handling for cards with delay
+                const cards = document.querySelectorAll('.card');
+                cards.forEach((card, index) => {
+                    const rect = card.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        setTimeout(() => {
+                            card.classList.add('fade-in');
+                        }, index * 200); // 200ms delay for each card
+                    }
+                });
+    
+                // Updated handling for gallery images with simultaneous zoom effect
+                const galleryContainer = document.querySelector('.img-container-grid');
+                if (galleryContainer) {
+                    const rect = galleryContainer.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const galleryImages = galleryContainer.querySelectorAll('.img-grid-c');
+                        galleryImages.forEach(img => {
+                            img.classList.add('zoom-in');
+                        });
+                    }
+                }
+            }
+    
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+        </script>
+
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -25,17 +25,25 @@ nav {
     position: fixed;
     display: flex;
     justify-content: space-between;
+    height: 90px;
     align-items: center;
     padding: 0 30px;
     z-index: 10000;
     background-color: #FDC039;
 }
 
-label.logo {
+.logo {
     font-size: 35px;
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;
+    height: 90px;
+    width: 90px;
+}
+.logo img{
+    width: 90px;
+    height: 90px;
+    
 }
 
 nav ul {
@@ -140,6 +148,134 @@ main {
 }
 
 
+/* about   */
+
+
+.container-about {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially shifted up */
+    transition: opacity 1s ease, transform 1s ease; /* Smooth transition */
+}
+
+.container-about.fade-in {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Back to normal position */
+}
+
+.pes-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.image-container {
+    flex: 1;
+    position: relative;
+}
+
+.image-container img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-count {
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+    background-color: #0077be;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    animation: floatOverlay 6s ease-in-out infinite;
+
+}
+
+.project-count .number {
+    font-size: 24px;
+    display: block;
+}
+
+.content {
+    flex: 1;
+}
+
+.company-label {
+    color: #0077be;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h1 span {
+    color: #FDC039;
+}
+
+.description {
+    margin-bottom: 20px;
+}
+
+.features {
+    margin-bottom: 20px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.feature::before {
+    content: '»';
+    color: #0077be;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.emphasis {
+    font-style: italic;
+    color: #666;
+}
+
+.dotted-bg {
+    position: absolute;
+    top: -20px;
+    right: 90px;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(#ff6600 2px, transparent 2px);
+    background-size: 10px 10px;
+    z-index: -1;
+    animation: floatOverlay 6s ease-in-out infinite;
+
+}
+
+@media (max-width: 768px) {
+    .pes-section {
+        flex-direction: column;
+    }
+
+    .image-container, .content {
+        width: 100%;
+    }
+
+    .project-count {
+        right: 20px;
+    }
+}
+
+
+
 
 
 
@@ -156,6 +292,13 @@ main {
     border-bottom: 1px solid black;
     margin-bottom: 20px;
 
+}
+.logo-footer{
+    width:200px;
+    height: 200px;
+}
+.logo-footer img{
+    width: 100%;
 }
 
 footer {
