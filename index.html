@@ -290,6 +290,37 @@ p{
         width: 20rem;
     }
 }
+.total {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .total .image-grid {
+            display: flex;
+            gap: 20px;
+            padding: 30px;
+            max-width: 1100px;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .total .image-item{
+            width: 30%;
+            height: 200px;
+            position: relative;
+            
+        }
+        .total .image-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+
     </style>
 <body>
     <nav>
@@ -451,25 +482,22 @@ p{
 
           </section>
 
-        <section style="padding: 40px;" class="gallery-container">
-            <h1 style="text-align: center;color: #ff6600;">Gallery</h1>
-            <div class="container">
-                <div class="img-container-grid">
-                    <div class="smallsquare"><img src="https://cdn.pixabay.com/photo/2018/05/28/22/11/message-in-a-bottle-3437294__340.jpg" class="img-grid-c"></div>
-              <div class="smallsquare"><img src="https://media.istockphoto.com/photos/view-of-sydney-harbour-australia-picture-id535455441?k=6&m=535455441&s=612x612&w=0&h=jVkW0bOqvffn2SzvUdncgkwHGScJRzak0oaQGij__h8=" class="img-grid-c"></div>
-                <div class="h_rectangle"><img src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="img-grid-c"></div>
-                <div class="smallsquare"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3WnzXzbr2hiB8lPq3n_p5fnQdvOMc3Ouummyk11uVylX-7rtdXA" class="img-grid-c"></div>
-                <div class="bigsquare"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR-oo8-jn28YVesncpNZ4cBHocvHtKLwzmpVDbq1k7KNa5jEiL" class="img-grid-c"></div>
-                <div class="bigsquare_blank">
-                  <div class="inner_square"><img src="https://www.w3schools.com/w3css/img_lights.jpg" class="img-grid-c"></div>
-                  <div class="inner_square"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR-oo8-jn28YVesncpNZ4cBHocvHtKLwzmpVDbq1k7KNa5jEiL" class="img-grid-c"></div>
-                  <div class="inner_square"><img src="https://media.cntraveller.in/wp-content/uploads/2018/10/GettyImages-990972132-866x487.jpg" class="img-grid-c"></div>
-                  <div class="inner_square"><img src="https://www.w3schools.com/howto/img_snow.jpg" class="img-grid-c"></div>
+        <section style="padding: 40px;display: flex;flex-direction: column;" class="gallery-container total">
+            <h1 style="text-align: center;color: #ff6600;">Projects</h1>
+
+            <div class="image-grid" id="imageGrid">
+                <div class="image-item">
+                    <img src="https://picsum.photos/300/169?random=1" alt="Work 1" title="Work 1">
                 </div>
-                <div class="v_rectangle"><img src="https://images.unsplash.com/photo-1541233349642-6e425fe6190e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="img-grid-c"></div>
-             
+                <div class="image-item">
+                    <img src="https://picsum.photos/300/169?random=1" alt="Work 1" title="Work 1">
+                </div>
+                <div class="image-item">
+                    <img src="https://picsum.photos/300/169?random=1" alt="Work 1" title="Work 1">
                 </div>
             </div>
+            <a href="projects.html" style="padding:10px 30px;background-color: #FDC039;color: white;border-radius: 20px;">Show all</a>
+
         </section>
         
           </section>
