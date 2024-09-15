@@ -101,7 +101,7 @@
             opacity: 1;
         }
 
-
+/* 
 
         .img-container-grid{
   display:flex;
@@ -181,7 +181,7 @@
     .img-grid-c.zoom-in {
         transform: scale(1);
         opacity: 1;
-    }
+    } */
 
 /* General fade-in animation */
 .container-about, .gallery-container, .services {
@@ -320,6 +320,32 @@ p{
         }
 
 
+        .stats-container {
+        display: flex;
+        padding: 50px;
+        gap: 15rem;
+        width: fit-content;
+        justify-content: space-around;
+        opacity: 0; /* Initially hidden */
+        transition: opacity 1s ease-out; /* Fade-in transition */
+    }
+    .stat {
+        text-align: center;
+    }
+    .number {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .label {
+        font-size: 0.875rem;
+        color: #a0aec0;
+    }
+    #projects { color: #FDC039; }
+    #feedback { color: #ff6600; }
+    .stats-visible {
+        opacity: 1; /* Visible when scrolled into view */
+    }
 
     </style>
 <body>
@@ -408,9 +434,97 @@ p{
             setInterval(nextSlide, 5000);
         </script>
 
+        <section class="stats" style="width: 100%;display: flex;align-items: center;justify-content: center;">
+            <div class="stats-container">
+                <div class="stat">
+                    <div class="number" style="color: #FDC039;"><span id="projects">0</span>+</div>
+                    <div class="label">Projects Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="number" style="color: #ff6600;"><span id="feedback">0</span>%</div>
+                    <div class="label">Positive Feedback</div>
+                </div>
+            </div>
+        </section>
 
-
-
+        <script>
+            function animateValue(id, start, end, duration) {
+                let startTimestamp = null;
+                const element = document.getElementById(id);
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    element.textContent = value;
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        createParticles(element);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+        
+            function createParticles(element) {
+                const rect = element.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+        
+                for (let i = 0; i < 20; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    document.body.appendChild(particle);
+        
+                    const size = Math.random() * 8 + 4;
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 60 + 40;
+                    const lifetime = Math.random() * 1000 + 1000;
+        
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${centerX}px`;
+                    particle.style.top = `${centerY}px`;
+                    particle.style.backgroundColor = element.style.color;
+        
+                    setTimeout(() => {
+                        const destinationX = centerX + Math.cos(angle) * velocity;
+                        const destinationY = centerY + Math.sin(angle) * velocity;
+        
+                        particle.style.transition = `all ${lifetime}ms cubic-bezier(0.25, 0.1, 0.25, 1)`;
+                        particle.style.transform = `translate(${destinationX - centerX}px, ${destinationY - centerY}px)`;
+                        particle.style.opacity = '0';
+                    }, 0);
+        
+                    setTimeout(() => {
+                        particle.remove();
+                    }, lifetime);
+                }
+            }
+        
+            // Function to start counting stats on scroll
+            function startCountingStats() {
+                animateValue("projects", 0, 200, 2000);
+                animateValue("feedback", 0, 100, 2000);
+            }
+        
+            // Create an intersection observer to watch for the stats container
+            const statsContainer = document.querySelector('.stats-container');
+        
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        statsContainer.classList.add('stats-visible'); // Add fade-in animation
+                        startCountingStats(); // Start counting the stats
+                        observer.unobserve(statsContainer); // Remove observer after animation starts
+                    }
+                });
+            }, {
+                threshold: 0.5 // Trigger when 50% of the stats section is visible
+            });
+        
+            observer.observe(statsContainer);
+        </script>
+        
         <div class="container-about wow fadeInUp">
             <h1 style="text-align: center;color: #ff6600;">About Us</h1>
             <section class="pes-section">
@@ -442,6 +556,7 @@ p{
                 </div>
             </section>
         </div>
+       
         <section class="services fadeInUp">
             <h1 style="text-align: center;color: #ff6600;">Services</h1>
            
@@ -555,7 +670,7 @@ p{
             new WOW().init();
     
             function animateOnScroll() {
-                const elements = document.querySelectorAll('.container-about, .gallery-container, .services');
+                const elements = document.querySelectorAll('.container-about,.container-stats, .gallery-container, .services');
                 elements.forEach(element => {
                     const rect = element.getBoundingClientRect();
                     if (rect.top < window.innerHeight && rect.bottom > 0) {
