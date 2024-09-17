@@ -8,105 +8,7 @@
     <link rel="stylesheet" href="style.css">
     </head>
     <style>
-         .total {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: white;
-        }
-        .works {
-            text-align: center;
-            padding: 20px;
-            max-width: 1200px;
-        }
-        .project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
-    margin: 20px;
-}
-
-.project-item {
-    border: 1px solid #ddd;
-    padding: 20px;
-    background-color: #f9f9f9;
-    transition: box-shadow 0.3s ease;
-}
-
-.project-item:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.project-item img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 15px;
-}
-
-.project-item h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.project-item p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-.project-item ul {
-    list-style: none;
-    padding: 0;
-}
-
-.project-item ul li {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-.project-item ul li strong {
-    font-weight: bold;
-}
-
-#loadMore {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #FDC039;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-#loadMore:hover {
-    background-color:#FDC039;
-}
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.filter-buttons button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    background-color: #FDC039;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-
-.filter-buttons button.active {
-    background-color: #FF5900;
-    font-weight: bold;
-}
-
+         
     </style>
 <body>
     <nav>
@@ -151,7 +53,7 @@
         id: 1,
         category: 'industrial',
         title: 'Industrial Warehouse,Houston, Texas, USA',
-        thumbnail: 'https://commercial-builders.co.uk/assets/images/headers/homepage-1600.jpg',
+        thumbnail: 'images/warehouse.png',
         description: `
             <p>This industrial warehouse project in Houston, Texas, was designed to accommodate large-scale storage and distribution operations. The warehouse structure is a single-story building featuring a wide-span roof supported by steel beams and columns. The design includes loading docks, mezzanine floors for office spaces, and provisions for heavy equipment and material handling systems.</p>
             <p>The structural detailing involved complex truss systems to provide the necessary strength and stability for the roof, which spans significant distances without interior columns to maximize usable space. The warehouse also includes a fire-rated compartmentation system, requiring precise detailing for fire-resistance-rated walls and ceilings, following strict safety regulations.</p>
@@ -166,7 +68,7 @@
         id: 2,
         category: 'commercial',
         title: 'High-Rise Commercial Building - Chicago, IL',
-        thumbnail: 'https://thumbs.dreamstime.com/b/high-rise-building-under-construction-april-sofia-bulgaria-53030435.jpg',
+        thumbnail: 'images/highraise.png',
         description: `
             <p>This project involved detailing the structural steel framework for a 15-story,300,000 sq ft  commercial building in Chicago.<br>The detailing work focused on the core structure, including beams, columns, and floor decking systems. The complexity of the project</p>
             <p>required precise coordination with the design team to ensure accuracy in the steel connections and adherence to local building codes.</p>
@@ -179,7 +81,7 @@
         id: 3,
         category: 'commercial',
         title: 'External Staircase Structure',
-        thumbnail: 'https://media.istockphoto.com/id/1982584663/photo/fire-exit-stair-of-large-factory-building-galvanise-metal-stair-step-of-the-big-cargo.jpg?s=612x612&w=0&k=20&c=QqvOFrk6IpU-MEYE-tWptGDUfSHlVXbF-aoU5nVa06o=',
+        thumbnail: 'images/staircase.png',
         description: `
             <p>This project involved the design and detailing of an external staircase for a commercial building in Chicago, Illinois. The staircase provides emergency egress for the building occupants and doubles as an architectural feature. Its exposed steel structure needed to be both functional and aesthetically pleasing.</p>
             <p>The design features a zigzag configuration, with the stairs enclosed by steel railings and grating. The staircase was engineered to handle heavy foot traffic and was designed to integrate seamlessly with the building's exterior while also meeting stringent safety and fire codes. The structure was hot-dip galvanized to protect against corrosion, given Chicago's varied and sometimes harsh climate conditions.</p>
@@ -193,7 +95,7 @@
         id: 4,
         category: 'industrial',
         title: 'Industrial Complex - Houston, TX',
-        thumbnail: 'https://images1.loopnet.com/i2/_drPoIR1US444VJKHBLkIhJ1GTfRLiLWYkJxNaELQ8U/117/flex-industrial-property-for-lease-7999-hansen-rd-houston-tx-77061.png',
+        thumbnail: 'images/industrial-complex.png',
         description: `
             <p>This large-scale industrial complex in Houston(500,000 sq ft) involved the detailing of steel structures for multiple facilities,including storage units, processing plants, and support buildings. The project required extensive coordination with various trades toensure that the steel detailing met the stringent specifications for industrial use, including load-bearing requirements and resistance to environmental factors.</p>
             <p><strong>steelUsed:</strong>A36<p>
@@ -205,7 +107,7 @@
         id: 5,
         category: 'commercial',
         title: 'Sports Arena - Los Angeles, CA',
-        thumbnail: 'https://www.enr.com/ext/resources/Issues/California_Issues/2023/October/CANWDigIntuit-Oct2023-2.jpg?height=635&t=1697817325&width=1200',
+        thumbnail: 'images/sports-arena.png',
         description: `
             <p>The sports arena project(250,000 sq ft ) in Los Angeles required the detailing of a wide-span roof structure, spectator stands, and supporting facilities. The design was complex, involving intricate steel trusses and connections to support large crowds and events.</p>
             <p>The detailing work focused on optimizing the structural integrity while allowing for aesthetic and functional design elements.</p>
@@ -218,7 +120,7 @@
         id: 6,
         category: 'industrial',
         title: 'Louisiana Office Complex, Baton Rouge, Louisiana',
-        thumbnail: 'https://media.licdn.com/dms/image/D4D12AQGrXxUSVbjNMw/article-cover_image-shrink_720_1280/0/1719374245206?e=2147483647&v=beta&t=3qrrpPH1HhwH4qHlq9q_KlYtdGTJ9JyGB-0LHXJ3yG0',
+        thumbnail: 'images/office-complex.png',
         description: `
             <p>This office complex was detailed following AISC standards to ensure the highest quality in structural integrity and safety. The project involved the collaboration of a team of 6 detailers who meticulously worked for a total of 1,200 hours. Each beam, column, and connection was modeled and checked using advanced BIM software, ensuring precise alignment and fit during fabrication and erection.The project spanned three months and included complex connections that required innovative detailing solutions.</p>
             
@@ -229,7 +131,7 @@
         id: 7,
         category: 'industrial',
         title: 'Terminal 3 Expansion ,Atlanta, Georgia',
-        thumbnail: 'https://media.licdn.com/dms/image/D4E12AQHUWXmYhXTPyg/article-cover_image-shrink_600_2000/0/1709972787500?e=2147483647&v=beta&t=zhCBCk1QP3fq5fNicqVaNNQ0te1IK0cBLHOfK1LnERk',
+        thumbnail: 'images/terminal3.png',
         description: `
             <p>The expansion of Terminal 3 at Hartsfield-Jackson Atlanta International Airport was a high-stakes project requiring exacting standards and precision. Using AISC standards, our team of 8 detailers invested over 2,000 hours in modeling, checking, and coordinating with fabricators and constructors. This project featured large-span trusses and a complex roof structure, which were detailed to accommodate various loads and service requirements. The use of BIM technology facilitated clash detection and seamless coordination with other trades.</p>
             
@@ -239,7 +141,7 @@
         id: 8,
         category: 'industrial',
         title: 'Camp Auditorium ,Houston, Texas',
-        thumbnail: 'https://bmbsteel.com.vn/storage/2022/07/5403/mceu-68631861021658713377104.jpg',
+        thumbnail: 'images/campauditorium.png',
         description: `
             <p>This multi-use auditorium was detailed with attention to both structural performance and aesthetic requirements. Adhering to AISC standards, our team of 5 detailers dedicated 1,000 hours to this project. The structure includes intricate roof framing and support systems to accommodate the auditorium's large, open spaces. Special detailing was done for acoustical considerations and to support large, suspended components within the space. BIM integration allowed for real-time adjustments and ensured all elements fit perfectly during assembly</p>
             
@@ -306,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3 style="color: black;">Quick Links</h3>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
@@ -316,21 +218,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                 </div>
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h3 style="color: black;">Services</h3>
                     <ul>
-                        <li><a href="#">Web</a></li>
-                        <li><a href="#">App</a></li>
-                        <li><a href="#">Software</a></li>
-                        <li><a href="#">Ecommerce</a></li>
+                        <li><a href="#">Structural Steel Detailing</a></li>
+                        <li><a href="#">Miscellaneous Steel Detailing</a></li>
+                        <li><a href="#">Connection Design Squad Steel Detailing</a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                     
                 </div>
                 <div class="footer-column">
-                    <h3>Get in touch</h3>
+                    <h3 style="color: black;">Get in touch</h3>
                     <div class="social-icons">
                         <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: black;"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter fa-xl"style="color: black;"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin fa-xl"style="color: black;"></i></a>
+                    </div>
+                    <div  style="display: flex;flex-direction: column;"></div>
+                        <p>403, Garg Enclave,  Telecom Nagar,  Gachibowli
+                        500032.</p>
+                        <p>Leo@squadsteeldetailing.com</p>
+                        <p>+91 83410 91462</p>
                     </div>
                     
                 </div>

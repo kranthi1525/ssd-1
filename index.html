@@ -222,7 +222,7 @@
 }
 .card{
     width:25rem;
-    height: 100%;
+    min-height: 250px;
     padding:2em 1.5em;
     background: linear-gradient(white 50%,#FDC039 50%);
     background-size: 100% 200%;
@@ -355,6 +355,7 @@ p{
         </div>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">☰</label>
+        
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html" >About Us</a></li>
@@ -368,7 +369,7 @@ p{
         <div class="hero-slider">
             <div class="slide active">
                 <div class="slide-background">
-                    <img src="banner3.jpg" alt="Steel Structure 1">
+                    <img src="images/banner3.jpg" alt="Steel Structure 1">
                 </div>
                 <div class="slide-content">
                     <h1>Squad Steel Detailing</h1>
@@ -378,7 +379,7 @@ p{
             </div>
             <div class="slide">
                 <div class="slide-background">
-                    <img src="https://static.vecteezy.com/system/resources/previews/022/453/397/non_2x/silhouette-of-engineer-looking-at-construction-site-engineering-concept-double-exposure-generative-ai-free-photo.jpg" alt="Steel Structure 2">
+                    <img src="images/banner1.jpg" alt="Steel Structure 2">
                 </div>
                 <div class="slide-content">
                     <h1>Squad Steel Detailing</h1>
@@ -389,7 +390,7 @@ p{
             </div>
             <div class="slide">
                 <div class="slide-background">
-                    <img src="banner2.jpg" alt="Steel Structure 3">
+                    <img src="images/banner2.jpg" alt="Steel Structure 3">
                 </div>
                 <div class="slide-content">
                     <h1>Squad Steel Detailing</h1>
@@ -435,7 +436,7 @@ p{
         </script>
 
         <section class="stats" style="width: 100%;display: flex;align-items: center;justify-content: center;">
-            <div class="stats-container">
+            <div class="stats-container" style="width: 100%;position: relative;border: 1px solid black;overflow-y: hidden;">
                 <div class="stat">
                     <div class="number" style="color: #FDC039;"><span id="projects">0</span>+</div>
                     <div class="label">Projects Completed</div>
@@ -503,7 +504,7 @@ p{
         
             // Function to start counting stats on scroll
             function startCountingStats() {
-                animateValue("projects", 0, 200, 2000);
+                animateValue("projects", 0, 50, 2000);
                 animateValue("feedback", 0, 100, 2000);
             }
         
@@ -526,32 +527,27 @@ p{
         </script>
         
         <div class="container-about wow fadeInUp">
-            <h1 style="text-align: center;color: #ff6600;">About Us</h1>
             <section class="pes-section">
                 <div class="image-container">
-                    <img src="https://prestylengineering.com/assets/front/img/about-brand.jpg" alt="Engineering team working on blueprints">
+                    <img src="images/about1.jpg" alt="Engineering team working on blueprints">
                     <div class="project-count">
-                        <span class="number">1000+</span>
+                        <span class="number">50+</span>
                         Completed Project's
                     </div>
                     <div class="dotted-bg"></div>
                 </div>
                 <div class="content">
-                    <p class="company-label">Squad steel detailing pvt</p>
-                    <h1><span>S</span>quad steel detailing (PVT)</h1>
+                    <p class="company-label">Squad steel detailing</p>
+                    <h1><span>S</span>quad steel detailing</h1>
                     <p class="description">
-                        Your global hub for cutting-edge Engineering, Structural Detailing, 
-                        Connection Design, and BIM solutions. With over 15+ years of industry 
-                        leadership and a track record of 1000+ Completed projects worldwide.
+                        Squad Steel Detailing excels in structural steel detailing, meticulously following AISC (American Institute of Steel Construction) standards. Our extensive industry experience spans years, during which we've successfully delivered a wide array of projects throughout the United States. We pride ourselves on our unwavering commitment to precision, efficiency, and safety in every aspect of our work.
                     </p>
                     <div class="features">
-                        <p class="feature">We prioritize understanding our clients' unique needs.</p>
-                        <p class="feature">Our commitment doesn't end with project completion.</p>
+                        <p class="feature">Total Projects Completed: 35+</p>
+                        <p class="feature">Industries Served: Commercial, Industrial, Infrastructure, Airports, and more.</p>
                     </div>
                     <p class="emphasis">
-                        We embody innovation and excellence. Our commitment to quality, 
-                        timely deliveries, and surpassing client expectations solidifies our 
-                        status as an esteemed partner in the engineering domain.
+                        Our team of skilled professionals brings a wealth of knowledge to each project, ensuring that every detail is carefully considered and executed. From complex industrial structures to intricate architectural designs, we have the expertise to handle diverse challenges in the steel detailing field. Our track record of successful completions across various sectors has established us as a trusted partner in the construction industry, known for our reliability and high-quality deliverables.
                     </p>
                 </div>
             </section>
@@ -563,32 +559,39 @@ p{
             <div class="column" style="gap: 30px;">
                         <a href="" class="card">
                             <div class="icon-wrapper">
-                            <i class="fa-solid fa-hammer"></i>
+                                <i class="fa-solid fa-hotel"></i>
                             </div>
                             <h3>Structural Steel Detailing</h3>
                             <p>
-                                Structural Steel Detailing is the production of detailed drawings for 
-                                steel fabricators and steel erectors to use in the construction of buildings.
+                                Squad Steel DetailingDetailing is committed to provide precisely detailed Commercial, 
+                                Industrial and residential steel structures. Structural detailing is a critical process
+                                of structural engineering and demands 100% accuracy. Our structural team holds tremendous skills 
+                                to produce quality drawings .WE utilizes Design Data’s SDS/2 technology to help produce high quality shop drawings 
+                                and erection plans, in addition to the field bolt list, shop bolt lists and material lists on schedule.
                             </p>
                         </a>
                         <a href="" class="card">
                             <div class="icon-wrapper">
-                                <i class="fa-solid fa-hammer"></i>  
+                                <i class="fa-solid fa-lines-leaning"></i>
                             </div>
-                            <h3>Structural Steel Detailing</h3>
+                            <h3>Miscellaneous Steel Detailing</h3>
                             <p>
-                                Structural Steel Detailing is the production of detailed drawings for 
-                                steel fabricators and steel erectors to use in the construction of buildings.
+                                With the use of SDS/2 software technology and AutoDesk Inventor, 
+                                to guide us in producing a wide range in scope of miscellaneous detailed drawings.
+                                We have our dedicate Miscellaneous team specialized in detailing complex Stairs, 
+                                Ladders, Gates and Rails with 100% accuracy.
                             </p>
                         </a>
                         <a href="" class="card">
                             <div class="icon-wrapper">
-                            <i class="fa-solid fa-hammer"></i>
+                                <i class="fa-solid fa-cubes "></i>
                             </div>
-                            <h3>Structural Steel Detailing</h3>
+                            <h3>Connection Design Squad Steel Detailing</h3>
                             <p>
-                                Structural Steel Detailing is the production of detailed drawings for 
-                                steel fabricators and steel erectors to use in the construction of buildings.
+                            As a leading structural steel detailing company we offer best quality structural steel
+                            connection design services to steel fabricators. To maintain an adherence to international standards 
+                            in engineering we are associated with Structural engineers around USA and Canada.
+                            In nut shell, we can provide connection designs and PE Stamping around all states of USA. 
                             </p>
                         </a>
                         
@@ -596,26 +599,67 @@ p{
             <a href="services.html" style="padding:10px 30px;background-color: #FDC039;color: white;border-radius: 20px;">Show more</a>
 
           </section>
-
+          
         <section style="padding: 40px;display: flex;flex-direction: column;" class="gallery-container total">
+            
             <h1 style="text-align: center;color: #ff6600;">Projects</h1>
 
-            <div class="image-grid" id="imageGrid">
-                <div class="image-item">
-                    <img src="https://picsum.photos/300/169?random=1" alt="Work 1" title="Work 1">
-                </div>
-                <div class="image-item">
-                    <img src="https://picsum.photos/300/169?random=1" alt="Work 1" title="Work 1">
-                </div>
-                <div class="image-item">
-                    <img src="https://picsum.photos/300/169?random=1" alt="Work 1" title="Work 1">
-                </div>
-            </div>
+            <div id="projectGrid" class="projec" style="max-width: 1200px;align-self: center;display: flex;gap: 20px;justify-content: space-around;max-width: 1700px;flex-wrap: wrap;padding: 30px;">
+                <div class="project-item">
+                  <img src="images/warehouse.png" alt="Industrial Warehouse,Houston, Texas, USA">
+                  <h2>Industrial Warehouse,Houston, Texas, USA</h2>
+                  
+                  <p><strong>steelUsed:</strong>500 tons of high-strength steel</p><p>
+                  </p><p><strong>hoursWorked</strong> 2,000 hours</p><p>
+                  </p><p><strong>detailersInvolved:</strong>3 detailers</p><p>
+                  </p><p><strong>standardsAndCodes:</strong>AISC, IBC, OSHA</p><p>
+              
+                  
+              </p></div>
+              <div class="project-item">
+                <img src="images/highraise.png" alt="High-Rise Commercial Building - Chicago, IL">
+                <h2>High-Rise Commercial Building - Chicago, IL</h2>
+                
+                <p><strong>steelUsed:</strong> A992 Grade 50</p><p>
+                </p><p><strong>hoursWorked</strong> 450 hours</p><p>
+                </p><p><strong>detailersInvolved:</strong>5 detailers</p><p>
+                
+                
+            </p></div>
+      
+          </div>
+      
             <a href="projects.html" style="padding:10px 30px;background-color: #FDC039;color: white;border-radius: 20px;">Show all</a>
 
         </section>
         
           </section>
+          <style>
+            .logo-container {
+      display: flex;
+      gap: 20px;
+      max-width: 90%;
+      left: 5%;
+      position: relative;
+      flex-wrap: wrap;
+      
+      justify-items: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .logo-container img {
+      width: 250px;
+      height: auto;
+    }
+          </style>
+          <div class="logo-container">
+            <img src="images/sds.webp" alt="Logo 1">
+            <img src="images/aisc.svg" alt="Logo 2">
+            <img src="images/nisd.svg" alt="Logo 3">
+            <img src="images/tekla.svg" alt="Logo 4">
+     
+          </div>
 
         </main>
 
@@ -627,7 +671,7 @@ p{
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>Quick Links</h3>
+                    <h3 style="color: black;">Quick Links</h3>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About</a></li>
@@ -637,21 +681,27 @@ p{
                     
                 </div>
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h3 style="color: black;">Services</h3>
                     <ul>
-                        <li><a href="#">Web</a></li>
-                        <li><a href="#">App</a></li>
-                        <li><a href="#">Software</a></li>
-                        <li><a href="#">Ecommerce</a></li>
+                        <li><a href="#">Structural Steel Detailing</a></li>
+                        <li><a href="#">Miscellaneous Steel Detailing</a></li>
+                        <li><a href="#">Connection Design Squad Steel Detailing</a></li>
+                        <li><a href="#"></a></li>
                     </ul>
                     
                 </div>
                 <div class="footer-column">
-                    <h3>Get in touch</h3>
+                    <h3 style="color: black;">Get in touch</h3>
                     <div class="social-icons">
                         <a href="#"><i class="fa-brands fa-facebook fa-xl" style="color: black;"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter fa-xl"style="color: black;"></i></a>
                         <a href="#"><i class="fa-brands fa-linkedin fa-xl"style="color: black;"></i></a>
+                    </div>
+                    <div  style="display: flex;flex-direction: column;"></div>
+                        <p>403, Garg Enclave,  Telecom Nagar,  Gachibowli
+                        500032.</p>
+                        <p>Leo@squadsteeldetailing.com</p>
+                        <p>+91 83410 91462</p>
                     </div>
                     
                 </div>
